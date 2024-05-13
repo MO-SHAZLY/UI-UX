@@ -1,0 +1,16 @@
+name: vars
+
+on: push
+
+jobs:
+    dcoker-login:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+            
+            - name: docker login
+              run: docker login --username=20150748 --password=#Tesla2030#
+
+
+              
