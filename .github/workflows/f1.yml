@@ -8,3 +8,9 @@ jobs:
     steps:
     - name: print msg
       run: echo "my first wf"
+      
+  sec_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: print msg
+          run: echo "my first wf"

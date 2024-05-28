@@ -1,0 +1,28 @@
+name: solar system workflow
+
+on:
+    push:
+        branches:
+            -  main
+            - 'Feature/*'
+
+jobs:
+    unit-testing:
+        name: unit Testing
+        strategy:
+            matrix:
+                nodejs_version: [18,19,20]
+                operating_system: [ubuntu-latest,macos-latest]
+        runs-on: ${{ matrix.operating_system }}
+        steps:
+            - name: setup NodeJs Version - ${{ matrix.nodejs_version }}
+              uses: actions/setup-node@v4
+              with:
+                node-version: ${{ matrix.nodejs_version }}
+            
+            - name: install depend.
+              run: npm install
+              
+            - name: Unit testing
+              run: npm test
+
