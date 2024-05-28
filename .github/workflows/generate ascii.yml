@@ -1,7 +1,6 @@
 name: Cowsay 
 
 on: push
-
 jobs:
     Ascii_job:
         runs-on: ubuntu-latest
